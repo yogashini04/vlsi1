@@ -1,0 +1,15 @@
+module Carry(a,b,c,s,co);
+input a,b;
+input c;
+output s,co;
+wire out4;
+wire out6;
+and (out1,a,b);
+xor (out2,a,b);
+and (out3,out2,c);
+or (out4,out3,out1);
+assign co = out4;
+xor (out5,a,b);
+xor (out6,out5,c);
+assign s = out6;
+endmodule
